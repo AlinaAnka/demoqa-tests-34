@@ -1,4 +1,8 @@
+package tests;
+
 import org.junit.jupiter.api.*;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class SimpleJUnitTest {
 
@@ -55,4 +59,5 @@ public class SimpleJUnitTest {
     private int getResult() {
         return 3;
     }
+
 }
