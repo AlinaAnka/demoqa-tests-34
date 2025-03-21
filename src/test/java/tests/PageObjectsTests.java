@@ -1,6 +1,6 @@
 package tests;
 
-import components.RegistrationPage;
+import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 public class PageObjectsTests extends TestBase {
@@ -8,7 +8,7 @@ public class PageObjectsTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    void objectsTest() {
+    void pageTest() {
         registrationPage.openPage()
                 .setFirstName("Alina")
                 .setLastName("Kovrigina")
@@ -22,7 +22,7 @@ public class PageObjectsTests extends TestBase {
                 .setCurrentAddress("Moscow55")
                 .setState("Haryana")
                 .setCity("Karnal")
-                .setSubmit();
+                .submit();
 
 
         registrationPage.checkResult("Student Name", "Alina Kovrigina")
@@ -36,11 +36,25 @@ public class PageObjectsTests extends TestBase {
                 .checkResult("Address", "Moscow55")
                 .checkResult("State and City", "Haryana Karnal");
 
+    }
 
+    @Test
+    void negativeTest(){
 
+            registrationPage.openPage()
+                    .setFirstName("Alina")
+                    .setLastName("Kovrigina")
+                    .setEmail("alina885@mail")
+                    .setGender("Female")
+                    .setUserNumber("54321")
+                    .submit();
+
+        registrationPage.checkErrorField();
+
+        }
 
     }
-    }
+
 
 
 
