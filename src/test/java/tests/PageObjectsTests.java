@@ -15,7 +15,7 @@ public class PageObjectsTests extends TestBase {
                 .setEmail("alina885@mail.ru")
                 .setGender("Female")
                 .setUserNumber("1122334455")
-                .setDateOfBirth("5", "April", "1905")
+                .setDateOfBirth("05", "April", "1905")
                 .setSubjects("Math")
                 .setHobbies("Sports")
                 .setUploadPicture("picture.png")
@@ -25,7 +25,9 @@ public class PageObjectsTests extends TestBase {
                 .submit();
 
 
-        registrationPage.checkResult("Student Name", "Alina Kovrigina")
+        registrationPage
+                .getResultTableComponent()
+                .checkResult("Student Name", "Alina Kovrigina")
                 .checkResult("Student Email", "lina885@mail.ru")
                 .checkResult("Gender", "Female")
                 .checkResult("Mobile", "1122334455")

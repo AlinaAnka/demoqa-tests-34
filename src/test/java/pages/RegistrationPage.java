@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.component.CalendarComponent;
+import pages.component.ResultTableComponent;
 
 import static com.codeborne.selenide.Condition.cssValue;
 import static com.codeborne.selenide.Condition.text;
@@ -26,7 +28,8 @@ public class RegistrationPage {
             submit = $("#submit");
 
 
-    Calendar calendar = new Calendar();
+    CalendarComponent calendarComponent = new CalendarComponent();
+    ResultTableComponent resultTableComponent = new ResultTableComponent();
 
 
     public RegistrationPage openPage() {
@@ -61,7 +64,7 @@ public class RegistrationPage {
 
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         calendarInput.click();
-        calendar.setDate(day, month, year);
+        calendarComponent.setDate(day, month, year);
         return this;
     }
 
@@ -97,15 +100,12 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage submit() {
+    public void submit() {
         submit.scrollTo().click();
-        return this;
     }
 
-    public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
-        return this;
+    public ResultTableComponent getResultTableComponent() {
+        return resultTableComponent;
     }
 
     public void checkErrorField() {

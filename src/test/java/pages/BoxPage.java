@@ -46,9 +46,9 @@ public class BoxPage {
         return this;
     }
 
-    public BoxPage submit() {
+    public void submit() {
         submit.click();
-        return this;
+
     }
 
     public BoxPage checkResult(String key, String value) {
