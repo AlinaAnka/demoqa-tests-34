@@ -18,7 +18,7 @@ public class PageObjectsTests extends TestBase {
                 .setDateOfBirth("05", "April", "1905")
                 .setSubjects("Math")
                 .setHobbies("Sports")
-                .setUploadPicture("picture.png")
+                .setUploadPicture("image3.png")
                 .setCurrentAddress("Moscow55")
                 .setState("Haryana")
                 .setCity("Karnal")
@@ -34,7 +34,7 @@ public class PageObjectsTests extends TestBase {
                 .checkResult("Date of Birth", "05 April,1905")
                 .checkResult("Subjects", "Math")
                 .checkResult("Hobbies", "Sports")
-                .checkResult("Picture", "picture.png")
+                .checkResult("Picture", "image3.png")
                 .checkResult("Address", "Moscow55")
                 .checkResult("State and City", "Haryana Karnal");
 

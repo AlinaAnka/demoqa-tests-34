@@ -5,7 +5,6 @@ import pages.component.CalendarComponent;
 import pages.component.ResultTableComponent;
 
 import static com.codeborne.selenide.Condition.cssValue;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.*;
