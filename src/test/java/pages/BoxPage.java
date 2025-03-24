@@ -26,11 +26,6 @@ public class BoxPage {
         return this;
     }
 
-    public BoxPage setLastName(String lastName) {
-        setLastName(lastName);
-        return this;
-    }
-
     public BoxPage setEmail(String email) {
         setEmail.setValue(email);
         return this;
