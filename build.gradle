@@ -6,7 +6,7 @@ plugins {
 repositories {
     mavenCentral()
 }
-def allureVersion = "2.24.0",
+def allureVersion = "2.21.0",
     selenideVersion = "6.19.1"
 
 allure {
