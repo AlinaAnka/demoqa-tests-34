@@ -3,11 +3,9 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
+import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -44,6 +42,8 @@ public class JenkinsDemoqaTest {
 
     @Test
     @Tag("demoqa")
+    @DisplayName("Проверка заполнения формы")
+    @Owner("Алина")
     void fillFormTest() {
         step("Open form", () -> {
             open("/automation-practice-form");
