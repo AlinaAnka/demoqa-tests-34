@@ -36,7 +36,7 @@ public class JenkinsDemoqaTest {
 
     @AfterEach
     void addAttachments() {
-        Attach.screenshotAs("screenshot");
+        Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
