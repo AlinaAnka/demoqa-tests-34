@@ -21,6 +21,7 @@ public class JenkinsDemoqaTest {
     @BeforeAll
     static void setupConfig() {
         Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -61,7 +62,7 @@ public class JenkinsDemoqaTest {
             $("div.react-datepicker__day--005").click();
             $("#subjectsInput").setValue("Math").pressEnter();
             $("label[for='hobbies-checkbox-1']").click();
-            $("#uploadPicture").uploadFromClasspath(("picture.png"));
+            $("#uploadPicture").uploadFromClasspath(("image3.png"));
             $("#currentAddress").setValue("Moscow55");
             $("#react-select-3-input").setValue("Haryana").pressEnter();
             $("#react-select-4-input").setValue("Karnal").pressEnter();
@@ -75,10 +76,9 @@ public class JenkinsDemoqaTest {
             $("div.table-responsive").shouldHave(text("05 April,1905"));
             $("div.table-responsive").shouldHave(text("Maths"));
             $("div.table-responsive").shouldHave(text("Sports"));
-            $("div.table-responsive").shouldHave(text("picture.png"));
+            $("div.table-responsive").shouldHave(text("image3.png"));
             $("div.table-responsive").shouldHave(text("Moscow55"));
             $("div.table-responsive").shouldHave(text("Haryana Karnal"));
         });
     }
-
 }
